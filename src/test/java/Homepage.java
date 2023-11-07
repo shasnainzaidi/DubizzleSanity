@@ -1,0 +1,48 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+public class Homepage {
+
+   private WebDriver driver;
+
+   @BeforeTest
+    public void Initialization(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    public void homepageAdsLocation() {
+       driver.get("https://stage.dubizzle-eg.run/en/");
+       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS );
+        //1. Click on location bar
+       driver.findElement(By.xpath("//span[@class='_6d5b4928']")).click();
+       //2. Click on L1 Location
+       driver.findElement(By.xpath("(//span[@class='_6d5b4928'])[3]")).click();
+       //3. Click on L2 Location
+       driver.findElement(By.xpath("//span[normalize-space()='Abu Qir']")).click();
+       //4. Getting location name from Location Bar
+        String location = driver.findElement(By.xpath("//span[@class='_6d5b4928']")).getText();
+        System.out.println(location);
+        //5. Getting location name from Ad tile
+        String AdLocation = driver.findElement(By.xpath("(//span[@class='afabcb7f'])[1]")).getText();
+        System.out.println(AdLocation);
+        //6. Checking if the ad is from location bar location
+        Assert.assertEquals(AdLocation, location);
+
+
+
+    }
+
+
+
+
+
+}
