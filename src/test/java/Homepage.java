@@ -45,6 +45,21 @@ public class Homepage {
 
 
     }
+@Test
+    public void searchSuggestion(){
+        driver.get("https://stage.dubizzle-eg.run/en/");
+        homepage = new homepageObj(driver);
+        homepage.searchBar.click();
+        homepage.searchBar.sendKeys("iphone");
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS );
+    String suggestion = driver.findElement(By.xpath("(//span[@class='cc670c51'])[2]")).getText();
+    String searchedKW= "iphone";
+    System.out.println(suggestion);
+    Assert.assertEquals(suggestion, searchedKW);
+
+
+
+}
 
 
 

@@ -36,6 +36,7 @@ public class CustomListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult arg0) {
+        System.out.println(" New Test Started");
         // TODO Auto-generated method stub
 
     }
