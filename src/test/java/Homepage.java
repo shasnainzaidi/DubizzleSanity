@@ -2,7 +2,11 @@ import Pages.homepageObj;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
@@ -57,7 +61,20 @@ public class Homepage {
     System.out.println(suggestion);
     Assert.assertEquals(suggestion, searchedKW);
 
+}
 
+@Test
+    public void catSubCatClick(){
+    driver.get("https://stage.dubizzle-eg.run/en/");
+    WebElement menuElement = driver.findElement(By.xpath("(//a[@class='_6eb51e9a'])[1]"));
+    Actions builder = new Actions(driver);
+    builder.moveToElement(menuElement).build().perform();
+    WebDriverWait wait = new WebDriverWait(driver, 10);
+    WebElement subMenu = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[@class='_3cf4abe9'])[1]")));
+
+    WebElement dropdownItem = subMenu.findElement(By.xpath("(//a[@class='_3cf4abe9'])[1]"));
+    dropdownItem.click();
+    driver.quit();
 
 }
 

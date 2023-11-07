@@ -24,6 +24,7 @@ public class CustomListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult arg0) {
+        System.out.println("Test Failed");
         // TODO Auto-generated method stub
 
     }
