@@ -19,6 +19,7 @@ jobs:
               name: Run specific tests
               command: mvn clean test -PSanity
 workflows:
+  version: 2.1
   first-workflow:
     jobs:
       - first-job
