@@ -5,6 +5,8 @@ jobs:
     first-job:
       docker:
         - image: cimg/openjdk:21.0.0
+        steps:
+          - run: echo "Hello, CircleCI!"
           steps:
             - checkout
             - run: mkdir test-reports
