@@ -1,6 +1,7 @@
 import Pages.homepageObj;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -78,8 +79,18 @@ public class Homepage {
 
 }
 
+@Test
+    public void back2top(){
+    driver.get("https://stage.dubizzle-eg.run/en/");
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0, 1500);");
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 
+}
+
+@Test
+    public void
 
 
 }
