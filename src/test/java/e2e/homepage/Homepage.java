@@ -1,3 +1,6 @@
+package e2e.homepage;
+
+import Config.CustomListener;
 import Pages.homepageObj;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -16,18 +19,19 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 @Listeners(CustomListener.class)
 public class Homepage {
+    private static final TimeUnit TimeUnit = null;
 
    private WebDriver driver;
     private homepageObj homepage;
 
 
-    @BeforeTest
+    @BeforeTest (alwaysRun = true)
     public void Initialization(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
 
-    @Test
+    @Test (groups = "Sanity")
     public void homepageAdsLocation() {
         homepage = new homepageObj(driver);
        driver.get("https://stage.dubizzle-eg.run/en/");
@@ -50,7 +54,7 @@ public class Homepage {
 
 
     }
-@Test
+@Test (groups = "Sanity")
     public void searchSuggestion(){
         driver.get("https://stage.dubizzle-eg.run/en/");
         homepage = new homepageObj(driver);
@@ -64,7 +68,7 @@ public class Homepage {
 
 }
 
-@Test
+@Test (groups = "Sanity")
     public void catSubCatClick(){
     driver.get("https://stage.dubizzle-eg.run/en/");
     WebElement menuElement = driver.findElement(By.xpath("(//a[@class='_6eb51e9a'])[1]"));
@@ -79,7 +83,7 @@ public class Homepage {
 
 }
 
-@Test
+@Test (description = "Clicking on Back to top button on homepage")
     public void back2top(){
     driver.get("https://stage.dubizzle-eg.run/en/");
     JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -89,8 +93,6 @@ public class Homepage {
 
 }
 
-@Test
-    public void
 
 
 }
