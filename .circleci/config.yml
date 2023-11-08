@@ -1,11 +1,7 @@
 Version: 2.1
 
-workflows:
-  first-workflow:
-    jobs:
-      - first-job
 
-  jobs:
+jobs:
     first-job:
       docker:
         - image: cimg/openjdk:21.0.0
@@ -22,3 +18,7 @@ workflows:
         - run:
               name: Run specific tests
               command: mvn clean test -PSanity
+workflows:
+  first-workflow:
+    jobs:
+      - first-job
