@@ -20,6 +20,26 @@
             </plugins>
         </pluginManagement>
     </build>
+    <profiles>
+        <profile>
+            <id>smoke</id>
+            <properties>
+                <testngFile>smoke.xml</testngFile>
+            </properties>
+        </profile>
+        <profile>
+            <id>sanity</id>
+            <properties>
+                <testngFile>Sanity.xml</testngFile>
+            </properties>
+        </profile>
+        <profile>
+            <id>e2e</id>
+            <properties>
+                <testngFile>sanityPlusSmoke.xml</testngFile>
+            </properties>
+        </profile>
+    </profiles>
     <dependencies>
 
         <dependency>
