@@ -36,4 +36,4 @@ jobs:
 #      - run: mvn test
       - run:
           name: Run specific tests
-          command: "mvn clean test -DsuiteXmlFile=sanity.xml -PSanity"
+          command: "mvn clean test -DsuiteXmlFile=Sanity.xml -PSanity"
