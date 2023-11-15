@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 8.559 s <<< FAILURE! -- in TestSuite
-e2e.homepage.Homepage.homepageAdsLocation -- Time elapsed: 0.014 s <<< FAILURE!
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 11.48 s <<< FAILURE! -- in TestSuite
+e2e.homepage.Homepage.homepageAdsLocation -- Time elapsed: 0.030 s <<< FAILURE!
 org.openqa.selenium.NoSuchSessionException: 
 Session ID is null. Using WebDriver after calling quit()?
 Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'

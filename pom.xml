@@ -40,7 +40,7 @@
         <profile>
             <id>Sanity</id>
             <properties>
-                <testngFile>Sanity.xml</testngFile>
+                <testngFile>path/to/Sanity.xml</testngFile>
             </properties>
         </profile>
         <profile>

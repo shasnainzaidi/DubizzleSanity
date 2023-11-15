@@ -28,6 +28,10 @@ jobs:
 
            # Install dependencies
       - run: mvn dependency:resolve
+      - run:
+           name: Debugging Info
+           command:
+           echo "TestNG File: ${testngFile}"
 
             # Build the project without running tests
       - run: mvn clean install
